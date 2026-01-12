@@ -16,7 +16,7 @@
   },
   "permission": {
     "bash": {
-      "*": "ask",
+      "*": "allow",
       "git *": "allow",
       "npm *": "allow",
       "rm *": "deny"

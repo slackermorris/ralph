@@ -1,7 +1,8 @@
 @prd.json @progress.txt \
 READ THE PRD AND PROGRESS FILE \
+
 1. Find the highest-priority task and implement it. \
-2. Run your tests and type checks if package.json is present \
+2. If there is a package.json, run your tests and type checks \
 3. Update the PRD with what was done. \
 4. Append your progress to progress.txt. \
    - Task completed and PRD item reference \
@@ -9,7 +10,7 @@ READ THE PRD AND PROGRESS FILE \
    - Files changed \
    - Any blockers or notes for next iteration \
      Keep entries concise. Sacrifice grammar for the sake of concision. This file helps future iterations skip exploration. \
-5. Before committing, run ALL feedback loops: \
+5. If there is a package.json, before committing, run ALL feedback loops: \
    1. TypeScript: npm run typecheck (must pass with no errors) \
    2. Tests: npm run test (must pass) \
    3. Lint: npm run lint (must pass) \
@@ -29,4 +30,4 @@ READ THE PRD AND PROGRESS FILE \
     3. Unknown unknowns and spike work \
     4. Standard features and implementation \
     5. Polish, cleanup, and quick wins \
-Fail fast on risky work. Save easy wins for later.
+   Fail fast on risky work. Save easy wins for later.
