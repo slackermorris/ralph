@@ -1,0 +1,6 @@
+{
+  "category": "functional",
+  "description": "Write a funny joke about software engineering",
+  "steps": ["Make a joke", "Append it to a joke.txt file"],
+  "passes": true
+}
