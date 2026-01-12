@@ -1,7 +1,7 @@
 @prd.json @progress.txt \
 READ THE PRD AND PROGRESS FILE \
 1. Find the highest-priority task and implement it. \
-2. Run your tests and type checks. \
+2. Run your tests and type checks if package.json is present \
 3. Update the PRD with what was done. \
 4. Append your progress to progress.txt. \
    - Task completed and PRD item reference \

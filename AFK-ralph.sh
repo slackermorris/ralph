@@ -1,27 +1,26 @@
 #!/bin/bash
 set -e
 
-MAX_ITERATIONS=${1:-10}
-SCRIPT_DIR="$(cd "$(dirname \
-  "${BASH_SOURCE[0]}")" && pwd)"
+if [ -z "$1" ]; then
+  echo "Must provide iterations argument."
+  exit 1
+fi
 
-echo "🚀 Starting Ralph"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-for i in $(seq 1 $MAX_ITERATIONS); do
+source "$SCRIPT_DIR/load-environment-variables.sh"
+load_environment_variables
+
+echo "🚀 Starting Ralph in AFK mode"
+
+for ((i=1; i<=$1; i++)); do
   echo "═══ Iteration $i ═══"
-  
-  OUTPUT=$(opencode run "$(cat "$SCRIPT_DIR/prompt.md")" 2>&1 \
-    | tee /dev/stderr) || true
-  
-  if echo "$OUTPUT" | \
-    grep -q "<promise>COMPLETE</promise>"
-  then
-    echo "✅ Done!"
+  result=$(opencode run "$(cat "$SCRIPT_DIR/prompt.md")")
+
+  echo "$result"
+
+  if [[ "$result" == *"<promise>COMPLETE</promise>"* ]]; then
+    echo "PRD complete after $i iterations."
     exit 0
   fi
-  
-  sleep 2
 done
-
-echo "⚠️ Max iterations reached"
-exit 1
