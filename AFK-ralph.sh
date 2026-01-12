@@ -8,7 +8,7 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-source "$SCRIPT_DIR/load-environment-variables.sh"
+source "$SCRIPT_DIR/utilities/load-environment-variables.sh"
 load_environment_variables
 
 echo "🚀 Starting Ralph in AFK mode"
