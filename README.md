@@ -1,8 +1,6 @@
 # ralph
 
-## What is Ralph?
-
-Ralph is a methodology for AI driven development. It solves the long-running agent problem [^1]: context windows get noisy and overwhelmed, leading to degraded output and failure.
+Ralph is a methodology for AI driven development put forward by Geoffrey Huntley [^4]. It solves the long-running agent problem [^1]: context windows get noisy and overwhelmed, leading to degraded output and failure.
 
 How? It runs your coding agent of choice in a loop. Each iteration gets a fresh context window, eliminating confusion and failure.
 
@@ -15,6 +13,12 @@ Implementation: Ralph is a bash script that loops over a prompt. The prompt refe
 1. **Planning Phase**: Run your coding agent in Plan mode. Define requirements, expected behaviour, system constraints, architecture, and what the software solves. Bring the idea to life with a vision and plan [^3].
 2. **Generate PRD**: Use templates/prd.txt to produce a prd.json that captures the breakdown of your plan and serves as a living task tracker.
 3. **Execute**: Run AFK-ralph.sh. Ralph works through the feature list in prd.json.
+
+The scripts must be made executable:
+
+```
+chmod +x <PATH_TO_SCRIPT>
+```
 
 ## The Stack
 
@@ -29,6 +33,7 @@ Implementation: Ralph is a bash script that loops over a prompt. The prompt refe
 - **HITL-ralph.sh**: Human In The Loop. Run this to gain confidence before committing to a full loop [^2].
 - **/loops/**: Alternate prompts that can replace the main prompt [^2].
 - **prompt.md**: Generic prompt with steps for an effective Ralph workflow.
+- **AGENTS.md**: Although not necessarily related to Ralph, I thought it worthwhile to link to the AGENTS.md file I use [here](https://gist.github.com/slackermorris/8d26d593284712b1770194291bbc556f).
 
 ## Tips For An Effective Workflow
 
@@ -85,8 +90,15 @@ Fail fast on risky work. Save easy wins for later.
 
 It categorizes work types well. But as a chronology it fails to consider why some work is picked over others. Tradeoffs: what else was considered? Did we compromise? Have we recorded this for posterity and visibility? Risks: what risks does the work pose? We want to surface risky work early to deal with unknown unknowns. Learnings inform and shape better solutions. Dependencies: is there a chronology to tasks? Is work blocking other work?
 
+## Additional Resources
+
+- [Ralph Wiggum: Autonomous Loops for Claude Code](https://paddo.dev/blog/ralph-wiggum-autonomous-loops/) explains that Claude Code has released a Ralph plugin. Community contributors have built on the pattern made implementations that solve the operational challenges: cost control, state recovery, monitoring. An example is [ralph-orchestrator](https://github.com/mikeyobrien/ralph-orchestrator).
+
+- [Vercel offers a AI Toolkit SDK for TypeScript](https://ai-sdk.dev/). There is an example of it being used [here](https://x.com/ctatedev/status/2007579593960747316).
+
 ## Footnotes
 
 [^1]: See [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
 [^2]: See [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum).
 [^3]: See [Stop Chatting with AI. Start Loops (Ralph Driven Development)](https://lukeparker.dev/stop-chatting-with-ai-start-loops-ralph-driven-development).
+[^4]: See [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/).

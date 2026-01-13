@@ -1,3 +1,4 @@
+# This was taken from a Matt Pocock Gist: https://gist.github.com/mattpocock/aaab9c629c733b75398aee9d839d6d5f.
 set -e
 
 if [ -z "$1" ]; then
