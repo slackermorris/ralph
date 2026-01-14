@@ -11,6 +11,13 @@ Implementation: Ralph is a bash script that loops over a prompt. The prompt refe
 ## The Workflow
 
 1. **Planning Phase**: Run your coding agent in Plan mode. Define requirements, expected behaviour, system constraints, architecture, and what the software solves. Bring the idea to life with a vision and plan [^3].
+
+Opencode has experimental support for a Plan mode.
+
+```
+opencode run OPENCODE_EXPERIMENTAL_PLAN_MODE=1
+```
+
 2. **Generate PRD**: Use templates/prd.txt to produce a prd.json that captures the breakdown of your plan and serves as a living task tracker.
 3. **Execute**: Run AFK-ralph.sh. Ralph works through the feature list in prd.json.
 
