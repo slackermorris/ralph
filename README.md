@@ -4,9 +4,9 @@ Ralph is a methodology for AI driven development put forward by Geoffrey Huntley
 
 How? It runs your coding agent of choice in a loop. Each iteration gets a fresh context window, eliminating confusion and failure.
 
-The catch: each iteration must know what progress has been made and what insights were gained. Otherwise the agent repeats mistakes. Ralph loads the living context from the previous iterations. Same prompt, but with living documents: a progress.txt ledger and prd.json task list that show how far along it is.
+The catch: each iteration must know what progress has been made and what insights were gained. Otherwise the agent repeats mistakes. Ralph loads the living context from the previous iterations. Same prompt, but with living documents: a progress.txt ledger and prd.json task list that show how far along it is. Progress is kept as a ledger (git log, progress.txt, prd.json) which the agent uses to find its bearings with each new iteration [^5].
 
-Implementation: Ralph is a bash script that loops over a prompt. The prompt references living documents (prd.json task list and progress.txt) that track activity and learnings.
+Implementation: Ralph is a bash script that loops over a prompt. The prompt references living documents (prd.json task list and progress.txt) that track activity and learnings. It is worth reframing how Ralph is an effective technique: _"the loop is not the technique, state hygiene is the technique"_ [^5].
 
 ## The Workflow
 
@@ -109,3 +109,4 @@ It categorizes work types well. But as a chronology it fails to consider why som
 [^2]: See [11 Tips For AI Coding With Ralph Wiggum](https://www.aihero.dev/tips-for-ai-coding-with-ralph-wiggum).
 [^3]: See [Stop Chatting with AI. Start Loops (Ralph Driven Development)](https://lukeparker.dev/stop-chatting-with-ai-start-loops-ralph-driven-development).
 [^4]: See [Ralph Wiggum as a "software engineer"](https://ghuntley.com/ralph/).
+[^5]: See [ralph for idiots: the only explanation you need](https://x.com/agrimsingh/status/2010412150918189210).
